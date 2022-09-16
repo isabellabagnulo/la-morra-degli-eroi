@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+// hook import
+import { useState } from "react"
+// router
+import { Routes, Route, useNavigate } from 'react-router-dom'
+// component import
+import Home from "./screens/Home"
+import Game from "./screens/Game"
+import Ranking from "./screens/Ranking"
+import Result from "./screens/Result"
+// css import
+import "./App.css"
 
 function App() {
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <Routes>
+        <Route path={'/'} element={<Home />} />
+        <Route path={'/game'} element={<Game />} />
+        <Route path={'/result'} element={<Result />} />
+        <Route path={'/ranking'} element={<Ranking />} />
+      </Routes>
+
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
